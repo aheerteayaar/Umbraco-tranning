@@ -1,0 +1,53 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.AboutMe>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+@{
+	Layout = "master.cshtml";
+}
+
+@await Html.PartialAsync("~/Views/Partials/breadcurms.cshtml",Model)
+<!-- about page about section -->
+<section class="w3l-aboutblock1" id="about">
+    <div class="midd-w3 py-5">
+        <div class="container py-lg-5 py-md-3">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="position-relative">
+                        <img src="@Model.Icon.Url()" alt="@Model.Icon.Url()" class="radius-image img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-8 mt-lg-0 mt-5">
+                    <h5 class="title-small mb-2">@Model.Value("tagHeading") </h5>
+                    <h3 class="title-big">@Model.Value("heading")</h3>
+                    <p class="mt-4">@Model.Value("description")</p>
+                    <div class="my-info mt-4">
+                        <div class="single-info"><span>Name:</span>
+                            <p>@Model.Value("personName")</p>
+                        </div>
+                        <div class="single-info"><span>Age:</span>
+                            <p>@Model.Value("age")</p>
+                        </div>
+                        <div class="single-info"><span>From:</span>
+                            <p>@Model.Value("from")</p>
+                        </div>
+                        <div class="single-info"><span>Email:</span>
+                            <p><a href="mailto:alexander@mail.com">@Model.Value("email")</a></p>
+                        </div>
+                    </div>
+                    <div class="my-social mt-lg-5 mt-4">
+                        <a href="#download" class="btn btn-style btn-primary">Download CV</a>
+                        <ul class="social m-0 p-0">
+                            <li><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+                            <li><a href="#instagram"><span class="fa fa-instagram"></span></a></li>
+                            <li><a href="#facebook"><span class="fa fa-facebook-official"></span></a></li>
+                            <li><a href="#linkedin"><span class="fa fa-linkedin-square"></span></a></li>
+                          </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //about page about section -->
+
